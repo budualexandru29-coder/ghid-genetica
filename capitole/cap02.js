@@ -76,6 +76,7 @@ html: `
 </svg>
 <figcaption><b>Figura 1 din curs, redesenată.</b> Promotorul (CG, CAAT, TATA) poziționează ARN polimeraza II la situsul de inițiere. Exonii rămân în ARN-ul matur; intronii, delimitați de GT…AG, sunt decupați.</figcaption>
 </figure>
+[[img:gena_euc|<b>De la genă la proteină, pe o singură imagine.</b> Sus: gena, cu secvențele reglatoare, promotorul, UTR-urile și cadrul de lectură întrerupt de introni. Mijloc: pre-ARNm după transcripție, apoi ARNm matur cu bonetă 5′ și coadă poli-A. Jos: proteina.]]
 <h3>Regiunea laterală 5′</h3>
 <p>Conține <b>promotorul</b> și alte elemente reglatoare din amonte, care activează sau blochează masiv transcripția și dau specificitatea tisulară și de stadiu ontogenetic: <b>activatori (enhancers), inhibitori (silencers), LCR (locus control regions), secvențe izolatoare</b>. Deși sunt la distanță, ajung în contact cu complexul transcripțional bazal (ARN polimerază + factori de transcripție generali) prin <b>formarea unei bucle de ADN</b>.</p>
 <div class="tw"><table>
@@ -182,6 +183,7 @@ html: `
 </svg>
 <figcaption><b>Figura 4 din curs: cele patru modalități de matisare.</b> Matisarea alternativă explică de ce un singur pre-ARNm poate da mai multe proteine.</figcaption>
 </figure>
+[[gal:splicing_reactie|<b>Reacția de matisare.</b> Intronul începe cu GU și se termină cu AG. Capătul 5′ al intronului se leagă de o adenină internă și formează o buclă („lasou”); exonii sunt sudați, iar lasoul este eliminat.;;splicing|<b>Matisare alternativă.</b> Din același pre-ARNm, includerea exonului galben sau a celui verde dă doi ARNm diferiți și două izoforme proteice.]]
 <div class="exemplu"><b>Exemplul din curs</b><p>Gena <b>calcitoninei</b>: în celulele C tiroidiene produce calcitonină; în hipotalamus, prin matisare alternativă, produce <b>calcitonin-related peptide</b>, cu rol neuromodulator și trofic.</p></div>
 <h3>Când matisarea se strică</h3>
 <p>Cauza obișnuită este o mutație punctiformă la situsurile de clivare (GT, AG): situsul normal este abolit și se activează <b>situsuri criptice</b>. Consecințe: exoni excluși, introni rămași în ARNm matur, secvențe exonice noi. Boli enumerate în curs: <b>fibroza chistică, fenilcetonuria, tromboza venoasă recurentă, β-talasemiile, hipoparatiroidismul</b>.</p>
@@ -207,6 +209,7 @@ ${cod}
 <tr><td><b>Sensibil la mutații</b></td><td>Mutațiile punctiforme: substituție, deleție, inserție (capitolul 5).</td></tr>
 <tr><td><b>„Înghețat”</b></td><td>Nu a mai evoluat semnificativ de la apariția bacteriilor.</td></tr>
 </table></div>
+[[img:roata_cod|<b>Codul genetic ca „roată”.</b> Se citește din centru spre exterior: prima bază în cercul interior, a doua în inelul mijlociu, a treia în cel exterior. Se vede imediat degenerarea: pentru mulți aminoacizi, a treia bază nu contează.]]
 <div class="cheie"><b>Degenerat nu înseamnă ambiguu</b><p>Degenerat: mai mulți codoni → același aminoacid. Neambiguu: un codon → un singur aminoacid. Săgeata merge într-un singur sens.</p></div>
 <div class="intrebari"><h4>Verifică-te</h4>
 <details class="q"><summary>De ce sunt suficienți 32 de anticodoni pentru 61 de codoni?</summary><div>Pentru că împerecherea dintre a treia bază a codonului și prima bază a anticodonului este flexibilă, deci un ARNt poate citi mai mulți codoni sinonimi.</div></details>
@@ -226,6 +229,7 @@ html: `
 <tr><td><b>Peptidil transferaza</b></td><td>Formează legătura peptidică.</td></tr>
 <tr><td><b>Cofactori proteici</b></td><td>Factori de inițiere (eIF), de elongație (EF) și de terminare (RF). Inactivarea lor de către toxine microbiene blochează translația și omoară celula.</td></tr>
 </table></div>
+[[img:arnt|<b>ARN-ul de transfer.</b> Stânga: structura în „frunză de trifoi”, cu aminoacidul atașat la capătul 3′ și anticodonul (jos) împerecheat cu un codon din ARNm. Dreapta: forma reală, tridimensională, în L.]]
 <p>Mai mulți ribozomi care traduc simultan același ARNm formează un <b>poliribozom</b>.</p>
 <figure>
 <svg viewBox="0 0 760 300" role="img" aria-label="Ribozomul în elongație">
@@ -278,6 +282,7 @@ html: `
 <tr><td><b>Remodelarea cromatinei</b></td><td>Repoziționarea activă a nucleozomilor, de către complexe de remodelare.</td></tr>
 <tr><td><b>Metilarea ADN</b></td><td>În general <b>represie</b>. Are loc aproape întotdeauna în dinucleotidele <b>CpG</b>, grupate în <b>insule CpG</b> la promotor (și în interiorul unor gene). Enzimă: <b>ADN-metiltransferaza</b>; demetilarea (activare): ADN-demetilaza. Mecanism <b>direct</b>: ADN-ul metilat împiedică legarea factorilor de transcripție. Mecanism <b>indirect</b>: proteine cu domeniu <b>MBD</b> (methyl-cytosine-binding domain) se leagă de grupările metil.</td></tr>
 </table></div>
+[[gal:acetilare|<b>Acetilarea histonelor.</b> Histon-acetiltransferazele (HAT) adaugă grupări acetil și relaxează cromatina: gena devine accesibilă. Histon-deacetilazele (HDAC) le scot și cromatina se închide.;;metilare_cancer|<b>Metilarea insulelor CpG.</b> Cercuri albe: CpG nemetilat; cercuri negre: metilat. În celula normală insula CpG a promotorului este nemetilată și gena activă; în cancer, promotorul unei gene supresoare este hipermetilat și gena este stinsă.]]
 <h3>Implicațiile mecanismelor epigenetice</h3>
 <p><b>1. Efecte de poziție.</b> Heterocromatinizarea se poate propaga la regiunile vecine. Exemplu: <b>distrofia musculară facio-scapulo-humerală</b>.</p>
 <p><b>2. Expresia monoalelică (excluzia alelică).</b> Dintr-o pereche de alele se exprimă una singură. Cuprinde amprentarea genomică (dependentă de originea parentală) și mecanisme independente de originea parentală, definitive, aleatorii și transmise celulelor-fiice.</p>
@@ -306,6 +311,7 @@ html: `
 <tr><td><b>Degete de zinc</b></td><td>23 de aminoacizi în formă de deget, cu un ion de Zn</td><td>Receptorii nucleari steroidici; receptorii pentru LDL</td></tr>
 <tr><td><b>Fermoar de leucină</b></td><td>2 spirale α unite la nivelul resturilor de leucină</td><td>Proteina CREB; produsele oncogenelor <b>JUN</b> și <b>FOS</b></td></tr>
 </table></div>
+[[gal:zinc|<b>Degete de zinc pe ADN.</b> Fiecare „deget” (albastru, cu ionul de zinc verde) intră în incizura mare și recunoaște câteva baze.;;leucina|<b>Fermoar de leucină.</b> Două elice α se țin una de alta prin leucine (roșu) și prind ADN-ul ca un clește, tot prin incizura mare.]]
 <h3>Reglarea posttranscripțională</h3>
 <p>Privește maturarea, localizarea, eficacitatea traducerii și degradarea ARNm. Mecanisme:</p>
 <ul>

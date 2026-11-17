@@ -47,6 +47,7 @@ html: `
 <figcaption><b>Schelet invariabil, baze variabile.</b> Axul catenei este alternanța deoxiriboză–fosfat. Bazele se prind lateral, perpendicular pe ax, la C1′. Pe aceeași catenă bazele nu se leagă niciodată între ele. Schemă proprie după descrierea din curs (p. 6).</figcaption>
 </figure>
 
+[[img:adn_chimic|<b>Structura chimică reală.</b> Sus, dublul helix; jos, patru perechi de baze cu toți atomii. Se văd inelele duble ale purinelor (A, G) în fața inelelor simple ale pirimidinelor (T, C), cele două catene în sensuri opuse (5′→3′ și 3′→5′) și punțile de hidrogen punctate dintre baze.]]
 <h3>Cum se leagă nucleotidele și de unde vine polaritatea</h3>
 <p>Nucleotidele aceleiași catene se unesc prin <b>legături covalente 3′–5′ fosfodiester</b>: hidroxilul de la C3′ al unei deoxiriboze se leagă de fosfatul fixat la C5′ al nucleotidului următor. Rezultă o catenă <b>liniară, neramificată, polarizată</b>. Aceasta este structura primară.</p>
 <p>La capete rămân două poziții neangajate: <b>5′-fosfat</b> la primul nucleotid și <b>3′-hidroxil</b> la ultimul. Ele dau polaritatea <b>5′→3′</b> și impun sensul de citire. Informația genetică este chiar ordinea nucleotidelor de-a lungul catenei, care stabilește ordinea aminoacizilor în proteine.</p>
@@ -132,6 +133,7 @@ html: `
 <tr><td><b>C, D, E</b></td><td>dreapta</td><td>mai <b>subțiri și mai lungi</b></td></tr>
 <tr><td><b>Z</b></td><td><b>stânga</b></td><td>dublu catenară, elicoidală; tip particular</td></tr>
 </table></div>
+[[img:abz|<b>Formele A, B și Z, modele atomice.</b> De la stânga la dreapta: A (scurtă și groasă), B (forma fiziologică), Z (subțire, răsucită spre stânga, cu schelet în zigzag). Aceeași secvență de baze poate adopta oricare dintre conformații.]]
 <p>Forma B se poate transforma în A sau în Z, iar transformarea este <b>reversibilă</b>. În figura din secțiunea anterioară, panoul din dreapta arată un fragment de ADN-Z real: scheletul nu mai urcă lin, ci în zigzag, de unde și numele.</p>
 <div class="cheie"><b>De reținut</b><p>O singură formă este levogiră: <b>Z</b>. Toate celelalte (A, B, C, D, E) sunt dextrogire.</p></div>
 <div class="intrebari"><h4>Verifică-te</h4>
@@ -147,6 +149,7 @@ html: `
 <h3>Absorbția razelor ultraviolete</h3>
 <p>Bazele azotate absorb UV, ceea ce înseamnă risc mutagen. Riscul maxim este la lungimea de undă de <b>260 nm</b>. Leziunea caracteristică este <b>dimerul de timină</b>: două pirimidine vecine de pe <i>aceeași</i> catenă se leagă între ele (legături <b>intracatenare</b>). Leziunea este recunoscută și reparată prin <b>NER</b> (nucleotide excision repair), mecanism reluat în capitolul 5.</p>
 
+[[img:dimer|<b>Formarea dimerului de timină.</b> Sub acțiunea UV, două timine vecine de pe aceeași catenă se leagă covalent printr-un inel ciclobutanic. Helixul se deformează local, iar polimerazele se blochează în dreptul leziunii.]]
 <h3>Denaturarea</h3>
 <p>Denaturarea este desfacerea parțială sau totală a celor două catene. In vitro, cea mai folosită este denaturarea termică („topire”). <b>Temperatura de topire (Tm)</b> este temperatura la care <b>jumătate</b> din ADN-ul dublu catenar este denaturat.</p>
 <figure>
@@ -223,6 +226,7 @@ html: `
 <figcaption><b>Aceeași regulă, două rezultate.</b> ADN polimeraza adaugă nucleotide numai la un capăt 3′-OH liber, deci numai în direcția 5′→3′. Pe o matriță sinteza urmează furca (continuu). Pe cealaltă trebuie să pornească repetat de lângă furcă și să se îndepărteze de ea (discontinuu). Schemă proprie după curs (p. 11–12) și Emery Fig. 2.3A.</figcaption>
 </figure>
 
+[[gal:replicare|<b>Furca de replicare, cu toate enzimele.</b> Helicaza deschide helixul, topoizomeraza detensionează în față, primaza pune amorse de ARN, polimerazele sintetizează, ligaza unește fragmentele Okazaki.;;replicare_euc|<b>Varianta eucariotă.</b> Polimeraza α pornește de la amorsă, polimeraza ε sintetizează catena directoare, polimeraza δ catena în întârziere; RNaza H și ligaza finisează. Detaliile depășesc cursul, dar arată unde stă fiecare piesă.]]
 <h3>Cele patru particularități</h3>
 <div class="tw"><table>
 <tr><th>Particularitate</th><th>Ce înseamnă</th><th>Cifra din curs</th></tr>
@@ -321,6 +325,7 @@ html: `
 <h3>De ce e nevoie de compensare de doză</h3>
 <p>Cromozomul <b>Y</b> este mic (grupa <b>G</b>), sărac în eucromatină, cu puține gene, implicate în sexualizarea masculină. Cromozomul <b>X</b> este mijlociu (grupa <b>C</b>) și are multe gene, implicate și în sexualizare, și în caractere somatice. Fără un mecanism de egalizare, femeile ar avea doză dublă din toate genele de pe X. Soluția: în toate celulele organismului feminin, <b>unul dintre cei doi X este inactivat</b>, iar cromatina sexuală rămâne activă genetic pe un singur X.</p>
 
+[[gal:barr|<b>Corpusculul Barr la microscop.</b> Nucleu de celulă feminină: X-ul inactiv (Xi) apare ca o masă compactă, intens colorată, lângă teritoriul difuz al X-ului activ (Xa).;;calico|<b>Mozaicul, vizibil cu ochiul liber.</b> La pisica calico, gena culorii (portocaliu sau negru) este pe X. Fiecare pată este o clonă de celule care a inactivat același X. De aceea pisicile calico sunt aproape întotdeauna femele.]]
 <h3>Ipoteza Lyon: cele patru proprietăți</h3>
 <div class="tw"><table>
 <tr><th>Inactivarea este…</th><th>Ce înseamnă</th></tr>
@@ -403,6 +408,7 @@ html: `
 <li>Rezultatul este „șiragul de mărgele” (nucleofilamentul), cu diametru de <b>10 nm</b> și compactare de <b>10 ori</b>.</li>
 </ul>
 
+[[img:cromatina|<b>Treptele de împachetare, desenate la scară relativă.</b> De la stânga: dublul helix, nucleozomul („șirag de mărgele”), fibra de 30 nm, buclele, cromatida condensată și cromozomul metafazic.]]
 <h3>Toate nivelurile, pe o singură scară</h3>
 <figure>
 <svg viewBox="0 0 760 330" role="img" aria-label="Nivelurile de compactare a cromatinei">

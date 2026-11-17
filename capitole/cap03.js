@@ -218,6 +218,7 @@ html: `
 </svg>
 <figcaption><b>De ce aceeași mutație dă tablouri diferite.</b> Împărțirea întâmplătoare a mitocondriilor produce celule cu proporții diferite de ADNmt mutant; boala apare doar în țesuturile în care proporția depășește pragul, începând cu cele mai dependente de energie.</figcaption>
 </figure>
+[[img:rrf|<b>Fibre roșii zdrențuite („ragged red fibers”).</b> Biopsie musculară. A: colorația tricrom Gomori arată acumulări roșii de mitocondrii anormale sub membrana fibrei. D: la microscopul electronic, mitocondrii cu incluziuni cristaline. Este semnul histologic comun pentru MELAS și MERRF.]]
 <h3>Când suspectezi o boală mitocondrială</h3>
 <ul>
 <li>afectarea concomitentă a <b>cel puțin 3 organe</b> fără origine embriologică sau funcție comună;</li>

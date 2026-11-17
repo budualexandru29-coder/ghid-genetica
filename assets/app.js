@@ -8,6 +8,15 @@
     set(k, v) { try { localStorage.setItem("ghidgen:" + k, JSON.stringify(v)); } catch (e) {} },
   };
   G.capitol = (c) => { G.cap[c.id] = c; };
+  // [[img:slug|legendă]] -> figură cu atribuire; [[gal:slug|legendă;;slug|legendă]] -> galerie
+  const unaImg = (slug, cap) => {
+    const m = (window.IMAGINI || {})[slug]; if (!m) return `<figure><figcaption>[imagine lipsă: ${esc(slug)}]</figcaption></figure>`;
+    return `<figure class="foto"><img loading="lazy" src="${m.fisier}" width="${m.w}" height="${m.h}" alt="${esc(cap.replace(/<[^>]+>/g, ""))}">
+      <figcaption>${cap}<span class="credit">Imagine: ${esc(m.autor)} · ${esc(m.licenta)} · <a href="${m.sursa}" target="_blank" rel="noopener">Wikimedia Commons</a></span></figcaption></figure>`;
+  };
+  const extinde = (html) => html
+    .replace(/\[\[gal:([\s\S]*?)\]\]/g, (_, s) => '<div class="galerie">' + s.split(";;").map((x) => { const i = x.indexOf("|"); return unaImg(x.slice(0, i).trim(), x.slice(i + 1).trim()); }).join("") + "</div>")
+    .replace(/\[\[img:([^|\]]+)\|([\s\S]*?)\]\]/g, (_, slug, cap) => unaImg(slug.trim(), cap.trim()));
 
   const inv = () => window.INVENTAR || [];
   const gata = () => mem.get("inteles", {});
@@ -49,7 +58,7 @@
       const are = !!G.cap[c.id], p = Math.round(progres(c.id) * 100);
       h += `<${are ? `a href="#/${c.id}"` : "div"} class="cartela ${are ? "" : "indisp"}">
         <span class="nrc">Capitolul ${esc(c.nr)} · p. ${c.pag[0]}–${c.pag[1]}</span><b>${esc(c.titlu)}</b>
-        <small>${are ? G.cap[c.id].sectiuni.length + " secțiuni · " + p + "% parcurs" : "în lucru — " + c.randuri.length + " rânduri de inventar"}</small>
+        <small>${are ? G.cap[c.id].sectiuni.length + " secțiuni · " + G.cap[c.id].sectiuni.reduce((n, s) => n + (s.html.match(/<figure|\[\[img:|\|/g) || []).filter((x) => x !== "|").length + (s.html.match(/\[\[gal:[\s\S]*?\]\]/g) || []).reduce((k, g) => k + g.split(";;").length, 0), 0) + " figuri · " + p + "% parcurs" : "în lucru — " + c.randuri.length + " rânduri de inventar"}</small>
         <div class="bara"><i style="width:${p}%"></i></div></${are ? "a" : "div"}>`;
     });
     $("#continut").innerHTML = h + "</div>";
@@ -69,7 +78,7 @@
       const k = id + "/" + s.id;
       h += `<section id="${s.id}"><h2>${esc(s.titlu)}</h2>
         <div class="surse"><span class="eticheta">Curs p. ${esc(s.pag)}</span>${s.emery ? `<span class="eticheta em">Emery ${esc(s.emery)}</span>` : ""}</div>
-        ${s.html}
+        ${extinde(s.html)}
         <label class="inteles ${g[k] ? "da" : ""}"><input type="checkbox" data-k="${k}" ${g[k] ? "checked" : ""}> Pot explica secțiunea asta fără să mă uit</label></section>`;
     });
     if (c.test) {
@@ -84,6 +93,7 @@
       h += `<div class="scor" id="scor"></div></section>`;
     }
     $("#continut").innerHTML = h;
+    let nf = 0; document.querySelectorAll("#continut figure > figcaption").forEach((fc) => { nf++; fc.insertAdjacentHTML("afterbegin", `<span class="nrfig">Fig. ${esc(meta.nr)}.${nf}</span> `); });
     if (tinta) { const el = document.getElementById(tinta); if (el) el.scrollIntoView(); } else window.scrollTo(0, 0);
   }
 
@@ -129,6 +139,14 @@
       const toate = document.querySelectorAll(".test .item"), r = document.querySelectorAll(".test .item.corect,.test .item.gresit"), c = document.querySelectorAll(".test .item.corect");
       $("#scor").textContent = `Corecte: ${c.length} din ${r.length} răspunse (${toate.length} afirmații în total).`;
     });
+    document.addEventListener("click", (e) => {
+      const lupa = $("#lupa");
+      if (!lupa.hidden && (e.target === lupa || e.target.closest("#lupa button"))) { lupa.hidden = true; $("#lupa-c").innerHTML = ""; return; }
+      const fig = e.target.closest("#continut figure"); if (!fig || e.target.closest("a")) return;
+      const el = fig.querySelector("img, svg"); if (!el) return;
+      $("#lupa-c").innerHTML = el.outerHTML + (fig.querySelector("figcaption") ? `<p>${fig.querySelector("figcaption").innerHTML}</p>` : ""); lupa.hidden = false;
+    });
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") { $("#lupa").hidden = true; } });
     window.addEventListener("hashchange", ruta); ruta();
   };
 })();
