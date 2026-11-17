@@ -723,6 +723,12 @@ window.INVENTAR = [
     "titlu": "Displazia ectodermală anhidrotică",
     "pag": 189,
     "id": "c10-r05"
+   },
+   {
+    "tip": "titlu",
+    "titlu": "Sindromul X fragil",
+    "pag": 193,
+    "id": "c10-r06"
    }
   ]
  },
