@@ -1,6 +1,6 @@
 // node tools/verifica.js — audit de acoperire: fiecare rând de inventar trebuie să aibă o secțiune în ghid
 const fs = require("fs"), path = require("path"), R = path.dirname(__dirname);
-global.window = {}; const caps = {}; global.GHID = { capitol: (c) => (caps[c.id] = c) };
+global.window = {}; const caps = {}; global.GHID = { capitol: (c) => (caps[c.id] = c), ped: { ind: () => "", cuplu: () => "", copii: () => "" } };
 require(R + "/date/inventar.js");
 fs.readdirSync(R + "/capitole").filter((f) => f.endsWith(".js")).forEach((f) => require(R + "/capitole/" + f));
 let tot = 0, ok = 0;

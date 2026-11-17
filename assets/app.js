@@ -73,7 +73,7 @@
     }
     const g = gata();
     let h = `<div class="sus">Capitolul ${esc(meta.nr)} · curs p. ${meta.pag[0]}–${meta.pag[1]}</div><h1>${esc(meta.titlu)}</h1>
-      <div class="surse">${meta.emery.map((e) => `<span class="eticheta em">Emery cap. ${e}</span>`).join("")}</div>${c.intro || ""}`;
+      <div class="surse">${meta.emery.map((e) => `<span class="eticheta em">Emery cap. ${e}</span>`).join("")}</div>${extinde(c.intro || "")}`;
     c.sectiuni.forEach((s) => {
       const k = id + "/" + s.id;
       h += `<section id="${s.id}"><h2>${esc(s.titlu)}</h2>
@@ -150,3 +150,25 @@
     window.addEventListener("hashchange", ruta); ruta();
   };
 })();
+
+/* Helper pentru arbori genealogici în SVG (capitolele 7–12).
+   ind(x, y, sex: m | f | ?, stare: a = afectat, p = purtător heterozigot, x = purtătoare X, n = sănătos, eticheta) */
+window.GHID.ped = {
+  ind(x, y, sex, st = "n", et = "", r = 15) {
+    const cls = st === "a" ? "fA si" : "fcard si";
+    let s = sex === "m" ? `<rect x="${x - r}" y="${y - r}" width="${2 * r}" height="${2 * r}" class="${cls}" stroke-width="1.6"/>`
+      : sex === "f" ? `<circle cx="${x}" cy="${y}" r="${r}" class="${cls}" stroke-width="1.6"/>`
+      : `<path d="M${x} ${y - r - 2} L${x + r + 2} ${y} L${x} ${y + r + 2} L${x - r - 2} ${y}z" class="${cls}" stroke-width="1.6"/>`;
+    if (st === "p") s += sex === "m" ? `<rect x="${x - r + 1}" y="${y - r + 1}" width="${r - 1}" height="${2 * r - 2}" class="fA"/>` : `<path d="M${x} ${y - r + 1} A${r - 1} ${r - 1} 0 0 0 ${x} ${y + r - 1}z" class="fA"/>`;
+    if (st === "x") s += `<circle cx="${x}" cy="${y}" r="4.5" class="fA"/>`;
+    if (et) s += `<text x="${x}" y="${y + r + 16}" text-anchor="middle" class="tm" style="font-size:11px">${et}</text>`;
+    return s;
+  },
+  cuplu(x1, x2, y, r = 15, consang = false) {
+    return `<line x1="${x1 + r}" y1="${y}" x2="${x2 - r}" y2="${y}" class="si" stroke-width="1.6"/>` + (consang ? `<line x1="${x1 + r}" y1="${y + 4}" x2="${x2 - r}" y2="${y + 4}" class="si" stroke-width="1.6"/>` : "");
+  },
+  copii(xm, y, xs, yc, r = 15) {
+    const yb = (y + yc - r) / 2;
+    return `<line x1="${xm}" y1="${y}" x2="${xm}" y2="${yb}" class="si" stroke-width="1.6"/><line x1="${Math.min(...xs, xm)}" y1="${yb}" x2="${Math.max(...xs, xm)}" y2="${yb}" class="si" stroke-width="1.6"/>` + xs.map((x) => `<line x1="${x}" y1="${yb}" x2="${x}" y2="${yc - r}" class="si" stroke-width="1.6"/>`).join("");
+  },
+};

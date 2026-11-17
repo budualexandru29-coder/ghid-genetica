@@ -1,0 +1,11 @@
+{
+ "c07_oi": ["Osteogeneza imperfectă: cele două gene ale colagenului de tip I", ["COL1A1", "COL1A2"], ["COL1A1", "COL1A2"], ""],
+ "c07_nf1": ["Neurofibromatoza tip 1: gena NF1", ["NF1"], ["NF1"], ""],
+ "c07_marfan": ["Sindromul Marfan: gena fibrilinei 1", ["FBN1"], ["FBN1"], ""],
+ "c07_fgfr3": ["Acondroplazia: gena FGFR3", ["FGFR3"], ["FGFR3"], ""],
+ "c07_pkd": ["ADPKD: genele PKD1 și PKD2", ["PKD1", "PKD2"], ["PKD1", "PKD2"], ""],
+ "c07_fh": ["Hipercolesterolemia familială: LDLR, APOB, PCSK9", ["LDLR", "APOB", "PCSK9"], ["LDLR", "APOB", "PCSK9"], ""],
+ "c08_ar": ["Bolile autozomal recesive din curs: localizarea genelor", ["CFTR", "PKHD1", "HFE", "PAH", "TYR", "OCA2", "ATP7B", "GALT", "IDUA"], ["CFTR"], ""],
+ "c09_xld": ["Bolile dominante legate de X: PHEX, IKBKG, MECP2", ["PHEX", "IKBKG", "MECP2"], ["PHEX", "MECP2"], ""],
+ "c10_xlr": ["Bolile recesive legate de X din curs", ["DMD", "F8", "F9", "OPN1LW", "OPN1MW", "EDA"], ["DMD", "F8"], ""]
+}
