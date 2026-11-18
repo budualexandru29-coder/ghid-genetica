@@ -18,7 +18,20 @@
     .replace(/\[\[gal:([\s\S]*?)\]\]/g, (_, s) => '<div class="galerie">' + s.split(";;").map((x) => { const i = x.indexOf("|"); return unaImg(x.slice(0, i).trim(), x.slice(i + 1).trim()); }).join("") + "</div>")
     .replace(/\[\[img:([^|\]]+)\|([\s\S]*?)\]\]/g, (_, slug, cap) => unaImg(slug.trim(), cap.trim()));
 
-  const inv = () => window.INVENTAR || [];
+  // două cărți: cursul (Bănescu 2015) și lucrările practice (Pașcanu, Csep, Mureșan)
+  const CARTI = [
+    { id: "curs", nume: "Curs", lung: "Cartea de curs", pref: "", pg: "Curs p.", inv: () => window.INVENTAR || [] },
+    { id: "lp", nume: "Lucrări practice", lung: "Cartea de lucrări practice", pref: "LP ", pg: "LP p.", inv: () => window.INVENTAR_LP || [] },
+  ];
+  const carteDe = (id) => (id && /^lp/.test(id) ? CARTI[1] : CARTI[0]);
+  const inv = (carte) => (carte ? carte.inv() : CARTI.flatMap((k) => k.inv()));
+  // secțiune de curs -> secțiunile de LP care trimit la ea (legături inverse)
+  const laLP = () => {
+    const m = {};
+    Object.values(G.cap).forEach((c) => c.sectiuni.forEach((s) => (s.curs || []).forEach((k) => (m[k] = m[k] || []).push({ cap: c.id, sec: s.id, titlu: s.titlu }))));
+    return m;
+  };
+  const titluSec = (k) => { const [c, s] = k.split("/"); const x = G.cap[c] && G.cap[c].sectiuni.find((y) => y.id === s); return x ? x.titlu : k; };
   const gata = () => mem.get("inteles", {});
   const progres = (id) => {
     const c = G.cap[id]; if (!c) return 0;
@@ -32,8 +45,9 @@
   };
 
   function lateral(activ) {
-    let h = "<h4>Capitole (ordinea din curs)</h4>";
-    inv().forEach((c) => {
+    const k = carteDe(activ);
+    let h = `<div class="comut">${CARTI.map((x) => `<a href="#/${x.id === "lp" ? "lp" : ""}" class="${x === k ? "activ" : ""}">${x.nume}</a>`).join("")}</div><h4>${k.id === "lp" ? "Lucrări practice (ordinea din carte)" : "Capitole (ordinea din curs)"}</h4>`;
+    inv(k).forEach((c) => {
       const are = !!G.cap[c.id];
       h += `<a href="#/${c.id}" class="${c.id === activ ? "activ" : ""} ${are ? "" : "indisp"}"><span class="nr">${esc(c.nr)}</span><span>${esc(c.titlu)}</span></a>`;
       if (are && c.id === activ) {
@@ -46,18 +60,22 @@
     $("#lateral").innerHTML = h;
   }
 
-  function acasa() {
-    const total = inv().reduce((n, c) => n + c.randuri.length, 0);
-    const ac = Object.keys(acoperire()).length;
-    let h = `<div class="sus">Bibliografie: Bănescu et al., 2015 · Emery's Elements, ed. 16</div>
+  function acasa(k) {
+    k = k || CARTI[0];
+    const ac = acoperire(), total = inv(k).reduce((n, c) => n + c.randuri.length, 0), n = inv(k).reduce((m, c) => m + c.randuri.filter((r) => ac[r.id]).length, 0);
+    let h = `<div class="comut mare">${CARTI.map((x) => `<a href="#/${x.id === "lp" ? "lp" : ""}" class="${x === k ? "activ" : ""}">${x.lung}</a>`).join("")}</div>` + (k.id === "lp"
+      ? `<div class="sus">Pașcanu, Csep, Mureșan — Aplicații practice în genetica umană · Emery's Elements, ed. 16</div>
+      <h1>Ghid pentru lucrările practice de genetică</h1>
+      <p class="lead">Urmează cartea de LP capitol cu capitol: ce faci la masa de lucru, ce vezi la microscop sau pe gel și cum citești rezultatul. Teoria tratată deja în ghidul de curs nu se repetă: fiecare secțiune trimite la capitolul de curs corespunzător.</p>
+      <p><span class="eticheta">LP p. N</span> trimite la pagina din cartea de LP · <span class="eticheta cs">Curs: …</span> la secțiunea din ghidul de curs · <span class="eticheta em">Emery cap. N</span> la Emery · acoperire: <b>${n} din ${total}</b> rânduri de inventar (<a href="#/acoperire">vezi matricea</a>).</p>`
+      : `<div class="sus">Bibliografie: Bănescu et al., 2015 · Emery's Elements, ed. 16</div>
       <h1>Ghid de pregătire teoretică la genetică</h1>
       <p class="lead">Urmează cartea de curs capitol cu capitol. Fiecare secțiune explică mecanismul, îl arată într-o figură construită din date primare și se încheie cu întrebări la care răspunzi înainte să vezi rezolvarea.</p>
-      <p><span class="eticheta">Curs p. N</span> trimite la pagina din cartea de curs · <span class="eticheta em">Emery cap. N</span> la capitolul din Emery · acoperire curentă: <b>${ac} din ${total}</b> rânduri de inventar (<a href="#/acoperire">vezi matricea</a>).</p>
-      <div class="grila">`;
-    inv().forEach((c) => {
+      <p><span class="eticheta">Curs p. N</span> trimite la pagina din cartea de curs · <span class="eticheta em">Emery cap. N</span> la capitolul din Emery · acoperire curentă: <b>${n} din ${total}</b> rânduri de inventar (<a href="#/acoperire">vezi matricea</a>). Pentru lucrările practice: <a href="#/lp">ghidul de LP</a>.</p>`) + `<div class="grila">`;
+    inv(k).forEach((c) => {
       const are = !!G.cap[c.id], p = Math.round(progres(c.id) * 100);
       h += `<${are ? `a href="#/${c.id}"` : "div"} class="cartela ${are ? "" : "indisp"}">
-        <span class="nrc">Capitolul ${esc(c.nr)} · p. ${c.pag[0]}–${c.pag[1]}</span><b>${esc(c.titlu)}</b>
+        <span class="nrc">${k.id === "lp" ? "LP" : "Capitolul"} ${esc(c.nr)} · p. ${c.pag[0]}–${c.pag[1]}</span><b>${esc(c.titlu)}</b>
         <small>${are ? G.cap[c.id].sectiuni.length + " secțiuni · " + G.cap[c.id].sectiuni.reduce((n, s) => n + (s.html.match(/<figure|\[\[img:|\|/g) || []).filter((x) => x !== "|").length + (s.html.match(/\[\[gal:[\s\S]*?\]\]/g) || []).reduce((k, g) => k + g.split(";;").length, 0), 0) + " figuri · " + p + "% parcurs" : "în lucru — " + c.randuri.length + " rânduri de inventar"}</small>
         <div class="bara"><i style="width:${p}%"></i></div></${are ? "a" : "div"}>`;
     });
@@ -65,21 +83,22 @@
   }
 
   function capitol(id, tinta) {
-    const c = G.cap[id], meta = inv().find((x) => x.id === id);
+    const c = G.cap[id], meta = inv().find((x) => x.id === id), k = carteDe(id), cap = k.id === "lp" ? "LP" : "Capitolul";
     if (!c) {
-      $("#continut").innerHTML = `<div class="sus">Capitolul ${esc(meta ? meta.nr : "")}</div><h1>${esc(meta ? meta.titlu : "Capitol inexistent")}</h1>
+      $("#continut").innerHTML = `<div class="sus">${cap} ${esc(meta ? meta.nr : "")}</div><h1>${esc(meta ? meta.titlu : "Capitol inexistent")}</h1>
         <p class="lead">Capitolul nu este încă scris. Rândurile lui din inventar apar în <a href="#/acoperire">matricea de acoperire</a>.</p>`;
       return;
     }
-    const g = gata();
-    let h = `<div class="sus">Capitolul ${esc(meta.nr)} · curs p. ${meta.pag[0]}–${meta.pag[1]}</div><h1>${esc(meta.titlu)}</h1>
-      <div class="surse">${meta.emery.map((e) => `<span class="eticheta em">Emery cap. ${e}</span>`).join("")}</div>${extinde(c.intro || "")}`;
+    const g = gata(), inv2 = laLP();
+    const legCurs = (ks) => (ks || []).map((x) => `<a class="eticheta cs" href="#/${x}">Curs: ${esc(titluSec(x))}</a>`).join("");
+    let h = `<div class="sus">${cap} ${esc(meta.nr)} · ${k.id === "lp" ? "LP" : "curs"} p. ${meta.pag[0]}–${meta.pag[1]}</div><h1>${esc(meta.titlu)}</h1>
+      <div class="surse">${meta.emery.map((e) => `<span class="eticheta em">Emery cap. ${e}</span>`).join("")}${(meta.curs || []).filter((x) => G.cap[x]).map((x) => `<a class="eticheta cs" href="#/${x}">Curs cap. ${esc(inv().find((y) => y.id === x).nr)}</a>`).join("")}</div>${extinde(c.intro || "")}`;
     c.sectiuni.forEach((s) => {
-      const k = id + "/" + s.id;
+      const k2 = id + "/" + s.id;
       h += `<section id="${s.id}"><h2>${esc(s.titlu)}</h2>
-        <div class="surse"><span class="eticheta">Curs p. ${esc(s.pag)}</span>${s.emery ? `<span class="eticheta em">Emery ${esc(s.emery)}</span>` : ""}</div>
+        <div class="surse"><span class="eticheta">${k.pg} ${esc(s.pag)}</span>${s.emery ? `<span class="eticheta em">Emery ${esc(s.emery)}</span>` : ""}${legCurs(s.curs)}${(inv2[k2] || []).map((x) => `<a class="eticheta lpc" href="#/${x.cap}/${x.sec}">LP ${esc(inv().find((y) => y.id === x.cap).nr)}: ${esc(x.titlu)}</a>`).join("")}</div>
         ${extinde(s.html)}
-        <label class="inteles ${g[k] ? "da" : ""}"><input type="checkbox" data-k="${k}" ${g[k] ? "checked" : ""}> Pot explica secțiunea asta fără să mă uit</label></section>`;
+        <label class="inteles ${g[k2] ? "da" : ""}"><input type="checkbox" data-k="${k2}" ${g[k2] ? "checked" : ""}> Pot explica secțiunea asta fără să mă uit</label></section>`;
     });
     if (c.test) {
       h += `<section id="test" class="test"><h2>Test adevărat / fals</h2><p>Formatul întrebărilor din Emery: fiecare afirmație se judecă separat. ${c.testNota || ""}</p>`;
@@ -93,22 +112,22 @@
       h += `<div class="scor" id="scor"></div></section>`;
     }
     $("#continut").innerHTML = h;
-    let nf = 0; document.querySelectorAll("#continut figure > figcaption").forEach((fc) => { nf++; fc.insertAdjacentHTML("afterbegin", `<span class="nrfig">Fig. ${esc(meta.nr)}.${nf}</span> `); });
+    let nf = 0; document.querySelectorAll("#continut figure > figcaption").forEach((fc) => { nf++; fc.insertAdjacentHTML("afterbegin", `<span class="nrfig">Fig. ${k.pref}${esc(meta.nr)}.${nf}</span> `); });
     if (tinta) { const el = document.getElementById(tinta); if (el) el.scrollIntoView(); } else window.scrollTo(0, 0);
   }
 
   function matrice() {
     const ac = acoperire();
     let tot = 0, ok = 0, h = "";
-    inv().forEach((c) => {
+    CARTI.forEach((k) => { h += `<h2>${k.lung}</h2>`; inv(k).forEach((c) => {
       const n = c.randuri.filter((r) => ac[r.id]).length; tot += c.randuri.length; ok += n;
-      h += `<h3>Capitolul ${esc(c.nr)} — ${esc(c.titlu)} <span class="stare ${n === c.randuri.length ? "ok" : "nu"}">${n}/${c.randuri.length}</span></h3>
+      h += `<h3>${k.id === "lp" ? "LP" : "Capitolul"} ${esc(c.nr)} — ${esc(c.titlu)} <span class="stare ${n === c.randuri.length ? "ok" : "nu"}">${n}/${c.randuri.length}</span></h3>
         <div class="tw"><table><tr><th>Rând din cartea de curs</th><th class="n">Pag.</th><th>Tip</th><th>Unde e în ghid</th></tr>` +
         c.randuri.map((r) => { const a = ac[r.id]; return `<tr><td>${esc(r.titlu)}</td><td class="n">${r.pag}</td><td>${r.tip}</td><td>${a ? `<a href="#/${a.cap}/${a.sec}">${esc(a.titlu)}</a>` : '<span class="stare nu">nemapat</span>'}</td></tr>`; }).join("") +
         "</table></div>";
-    });
+    }); });
     $("#continut").innerHTML = `<div class="sus">Verificare</div><h1>Matricea de acoperire</h1>
-      <p class="lead">Fiecare titlu, subtitlu, figură și tabel din cartea de curs este un rând. Ghidul e complet când niciun rând nu mai e „nemapat”.</p>
+      <p class="lead">Fiecare titlu, subtitlu, figură și tabel din cartea de curs și din cartea de LP este un rând. Ghidul e complet când niciun rând nu mai e „nemapat”.</p>
       <p><b>${ok} din ${tot}</b> rânduri acoperite (${Math.round((100 * ok) / tot)}%). Titlurile figurilor și tabelelor provin din OCR-ul legendelor și pot avea mici erori de literă până la scrierea capitolului.</p>` + h;
     window.scrollTo(0, 0);
   }
@@ -117,7 +136,7 @@
     const [, id, tinta] = location.hash.split("/");
     $("#lateral").classList.remove("deschis");
     lateral(id);
-    if (!id) acasa(); else if (id === "acoperire") matrice(); else capitol(id, tinta);
+    if (!id) acasa(); else if (id === "lp") acasa(CARTI[1]); else if (id === "acoperire") matrice(); else capitol(id, tinta);
   }
 
   G.porneste = () => {

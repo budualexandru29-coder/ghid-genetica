@@ -17,7 +17,7 @@ def get(u, raw=False):
             err = e; time.sleep(45 if "429" in str(e) else 3 + 4 * i)
     raise err
 def info(titles):
-    q = API + urllib.parse.urlencode({"action": "query", "titles": "|".join(titles), "prop": "imageinfo", "iiprop": "url|extmetadata|size|mime", "iiurlwidth": 1100})
+    q = API + urllib.parse.urlencode({"action": "query", "titles": "|".join(titles), "prop": "imageinfo", "iiprop": "url|extmetadata|size|mime", "iiurlwidth": 960})
     return get(q).get("query", {}).get("pages", {})
 def clean(s): return re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", "", s or ""))).strip()
 db_path = R + "/date/imagini.js"
@@ -47,9 +47,16 @@ elif cmd == "adauga":
         ii = pg["imageinfo"][0]; m = ii["extmetadata"]; lic = m.get("LicenseShortName", {}).get("value", "?")
         if not OK.match(lic): print("LICENȚĂ NEACCEPTATĂ", slug, lic); continue
         url = ii.get("thumburl") or ii["url"]
+        tw, th = ii.get("thumbwidth", ii["width"]), ii.get("thumbheight", ii["height"])
+        if ii["width"] <= 960 and "/thumb/" not in url and not title.lower().endswith(".svg"):
+            # originalele mici sunt limitate (HTTP 429): se cere o miniatură de mărime standard
+            std = max([k for k in (120, 250, 330, 500) if k < ii["width"]] or [120])
+            pth = urllib.parse.urlparse(ii["url"]).path.split("/commons/", 1)[1]
+            url = f"https://upload.wikimedia.org/wikipedia/commons/thumb/{pth}/{std}px-{os.path.basename(pth)}"
+            tw, th = std, round(ii["height"] * std / ii["width"])
         ext = ".png" if title.lower().endswith(".svg") else os.path.splitext(urllib.parse.urlparse(url).path)[1].lower() or ".jpg"
         try: data = get(url, raw=True)
-        except Exception as e: print("EȘEC", slug, e); continue
+        except Exception as e: print("EȘEC", slug, e, flush=True); continue
         open(f"{R}/fig/wm/{slug}{ext}", "wb").write(data)
-        db[slug] = dict(fisier=f"fig/wm/{slug}{ext}", titlu=title, autor=clean(m.get("Artist", {}).get("value"))[:120] or "autor nespecificat", licenta=lic, sursa=ii["descriptionurl"], w=ii.get("thumbwidth", ii["width"]), h=ii.get("thumbheight", ii["height"]))
-        save(db); print("ok", slug, lic, "|", db[slug]["autor"][:50], flush=True); time.sleep(5)
+        db[slug] = dict(fisier=f"fig/wm/{slug}{ext}", titlu=title, autor=clean(m.get("Artist", {}).get("value"))[:120] or "autor nespecificat", licenta=lic, sursa=ii["descriptionurl"], w=tw, h=th)
+        save(db); print("ok", slug, lic, "|", db[slug]["autor"][:50], flush=True); time.sleep(8)

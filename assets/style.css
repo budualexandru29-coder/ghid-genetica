@@ -138,4 +138,22 @@ section>h2::before{content:"";flex:0 0 8px;height:28px;border-radius:4px;backgro
 .pasi{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:1.2em 0;counter-reset:pas;max-width:820px}
 .pasi>div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 12px 12px 14px;font-size:14.5px;line-height:1.45;position:relative;counter-increment:pas}
 .pasi>div::before{content:counter(pas);display:grid;place-items:center;width:26px;height:26px;border-radius:50%;background:var(--accent);color:#fff;font-weight:800;font-size:13px;margin-bottom:6px}
-.pasi>div b{display:block}
+.pasi>div>b:first-child{display:block}
+
+/* două cărți: comutator curs / LP, etichete de legătură */
+.comut{display:flex;gap:4px;background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:3px;margin:0 2px 6px}
+.comut a{flex:1;text-align:center;justify-content:center;padding:5px 8px;border-radius:7px;text-decoration:none;color:var(--muted);font-weight:700;font-size:13.5px}
+.comut a.activ{background:var(--card);color:var(--ink);box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.comut.mare{display:inline-flex;margin:0 0 18px}
+.comut.mare a{padding:7px 16px;font-size:14.5px}
+.eticheta.cs{background:var(--ok-soft);color:var(--ok);text-decoration:none}
+.eticheta.lpc{background:var(--warn-soft);color:var(--warn);text-decoration:none}
+a.eticheta:hover{filter:brightness(.95);text-decoration:underline}
+.protocol{counter-reset:pr;margin:1.2em 0;max-width:820px;padding:0;list-style:none}
+.protocol>li{position:relative;padding:10px 14px 10px 52px;margin:7px 0;background:var(--card);border:1px solid var(--line);border-radius:10px;counter-increment:pr;line-height:1.5}
+.protocol>li::before{content:counter(pr);position:absolute;left:12px;top:10px;width:28px;height:28px;border-radius:8px;background:var(--info-soft);color:var(--info);font-weight:800;display:grid;place-items:center;font-size:14px}
+.protocol>li>b:first-child{display:block}
+.protocol .de-ce{display:block;font-size:14px;color:var(--muted);margin-top:3px}
+.lab{border-radius:10px;padding:12px 16px;margin:1.1em 0;border-left:4px solid var(--info);background:var(--info-soft)}
+.lab>b:first-child{display:block;font-size:12.5px;letter-spacing:.07em;text-transform:uppercase;margin-bottom:2px;color:var(--info)}
+.lab p{margin:.3em 0}
