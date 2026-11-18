@@ -664,5 +664,428 @@ window.IMAGINI = {
   "sursa": "https://commons.wikimedia.org/wiki/File:Pompe_vacuoles.jpg",
   "w": 960,
   "h": 712
+ },
+ "mut_punct": {
+  "fisier": "fig/wm/mut_punct.png",
+  "titlu": "File:Point mutations-en.svg",
+  "autor": "User:Mikey641",
+  "licenta": "CC BY-SA 4.0",
+  "sursa": "https://commons.wikimedia.org/wiki/File:Point_mutations-en.svg",
+  "w": 1100,
+  "h": 804
+ },
+ "siclemie": {
+  "fisier": "fig/wm/siclemie.png",
+  "titlu": "File:Point-Mutation-Sickle-Cell-Normal and Mutated-Hemoglobin.png",
+  "autor": "Thomas Samuel for ACC-BioinnovationLab",
+  "licenta": "CC BY-SA 4.0",
+  "sursa": "https://commons.wikimedia.org/wiki/File:Point-Mutation-Sickle-Cell-Normal_and_Mutated-Hemoglobin.png",
+  "w": 1100,
+  "h": 448
+ },
+ "mut_crz": {
+  "fisier": "fig/wm/mut_crz.png",
+  "titlu": "File:Single Chromosome Mutations.svg",
+  "autor": "Richard Wheeler (Zephyris) Vector version: NikNaks",
+  "licenta": "CC BY-SA 3.0",
+  "sursa": "https://commons.wikimedia.org/wiki/File:Single_Chromosome_Mutations.svg",
+  "w": 1100,
+  "h": 796
+ },
+ "robertson": {
+  "fisier": "fig/wm/robertson.png",
+  "titlu": "File:Robertsonian translocation.png",
+  "autor": "Original from DataBase Center for Life Science (DBCLS) Derivative by Mikael Häggström, M.D. Author info - Reusing images",
+  "licenta": "CC BY 4.0",
+  "sursa": "https://commons.wikimedia.org/wiki/File:Robertsonian_translocation.png",
+  "w": 1100,
+  "h": 1100
+ },
+ "snp": {
+  "fisier": "fig/wm/snp.png",
+  "titlu": "File:Dna-SNP.svg",
+  "autor": "David Eccles (Gringer)",
+  "licenta": "CC BY 4.0",
+  "sursa": "https://commons.wikimedia.org/wiki/File:Dna-SNP.svg",
+  "w": 1100,
+  "h": 704
+ },
+ "cnv": {
+  "fisier": "fig/wm/cnv.png",
+  "titlu": "File:Copy number variants.png",
+  "autor": "NHS National Genetics and Genomics Education Centre",
+  "licenta": "CC BY 2.0",
+  "sursa": "https://commons.wikimedia.org/wiki/File:Copy_number_variants.png",
+  "w": 960,
+  "h": 754
+ },
+ "huntington": {
+  "fisier": "fig/wm/huntington.jpg",
+  "titlu": "File:Huntington.jpg",
+  "autor": "Frank Gaillard",
+  "licenta": "CC BY-SA 3.0",
+  "sursa": "https://commons.wikimedia.org/wiki/File:Huntington.jpg",
+  "w": 1100,
+  "h": 1374
+ },
+ "ber": {
+  "fisier": "fig/wm/ber.png",
+  "titlu": "File:Dna repair base excersion en.svg",
+  "autor": "LadyofHats",
+  "licenta": "Public domain",
+  "sursa": "https://commons.wikimedia.org/wiki/File:Dna_repair_base_excersion_en.svg",
+  "w": 1100,
+  "h": 1455
+ },
+ "mmr_ner": {
+  "fisier": "fig/wm/mmr_ner.png",
+  "titlu": "File:Mismatch repair and nucleotide excision repair diagram.png",
+  "autor": "Ye Zhang, Larry H Rohde, and Honglu Wu",
+  "licenta": "CC BY 3.0",
+  "sursa": "https://commons.wikimedia.org/wiki/File:Mismatch_repair_and_nucleotide_excision_repair_diagram.png",
+  "w": 1100,
+  "h": 689
+ },
+ "xp": {
+  "fisier": "fig/wm/xp.jpg",
+  "titlu": "File:Xeroderma pigmentosum 01.jpg",
+  "autor": "James Halpern, Bryan Hopping and Joshua M Brostoff",
+  "licenta": "CC BY-SA 3.0",
+  "sursa": "https://commons.wikimedia.org/wiki/File:Xeroderma_pigmentosum_01.jpg",
+  "w": 1100,
+  "h": 825
+ },
+ "cyp2d6": {
+  "fisier": "fig/wm/cyp2d6.png",
+  "titlu": "File:Protein CYP2D6 PDB 2f9q.png",
+  "autor": "Emw",
+  "licenta": "CC BY-SA 3.0",
+  "sursa": "https://commons.wikimedia.org/wiki/File:Protein_CYP2D6_PDB_2f9q.png",
+  "w": 960,
+  "h": 820
+ },
+ "g6pd": {
+  "fisier": "fig/wm/g6pd.png",
+  "titlu": "File:Pathology of G6PD deficiency.png",
+  "autor": "LHcheM",
+  "licenta": "CC BY-SA 3.0",
+  "sursa": "https://commons.wikimedia.org/wiki/File:Pathology_of_G6PD_deficiency.png",
+  "w": 1100,
+  "h": 1730
+ },
+ "ad": {
+  "fisier": "fig/wm/ad.png",
+  "titlu": "File:Autosomal dominant - en.svg",
+  "autor": "Domaina",
+  "licenta": "CC BY-SA 3.0",
+  "sursa": "https://commons.wikimedia.org/wiki/File:Autosomal_dominant_-_en.svg",
+  "w": 1100,
+  "h": 1878
+ },
+ "oi_sclere": {
+  "fisier": "fig/wm/oi_sclere.jpg",
+  "titlu": "File:Characteristically blue sclerae of patient with osteogenesis imperfecta.jpg",
+  "autor": "Herbert L. Fred, MD and Hendrik A. van Dijk",
+  "licenta": "CC BY-SA 3.0",
+  "sursa": "https://commons.wikimedia.org/wiki/File:Characteristically_blue_sclerae_of_patient_with_osteogenesis_imperfecta.jpg",
+  "w": 1100,
+  "h": 514
+ },
+ "nf1": {
+  "fisier": "fig/wm/nf1.png",
+  "titlu": "File:Symptoms of neurofibromatosis type 1 - censored version.png",
+  "autor": "Mikael Häggström, M.D. Author info - Reusing images- Conflicts of interest: None Mikael Häggström, M.D. et. al (source i",
+  "licenta": "CC BY 4.0",
+  "sursa": "https://commons.wikimedia.org/wiki/File:Symptoms_of_neurofibromatosis_type_1_-_censored_version.png",
+  "w": 960,
+  "h": 1172
+ },
+ "lisch": {
+  "fisier": "fig/wm/lisch.jpg",
+  "titlu": "File:Lisch nodules.JPG",
+  "autor": "Dimitrios Malamos",
+  "licenta": "CC BY 4.0",
+  "sursa": "https://commons.wikimedia.org/wiki/File:Lisch_nodules.JPG",
+  "w": 960,
+  "h": 640
+ },
+ "steinberg": {
+  "fisier": "fig/wm/steinberg.jpg",
+  "titlu": "File:Steinberg and Walker-Murdoch tests.jpg",
+  "autor": "Graziella F. B. Cipriano; Guilherme C. Brech; Paulo A. T. Peres; Cássia C. Mendes; Gerson Cipriano Júnior; Antônio C. C.",
+  "licenta": "CC BY 4.0",
+  "sursa": "https://commons.wikimedia.org/wiki/File:Steinberg_and_Walker-Murdoch_tests.jpg",
+  "w": 960,
+  "h": 451
+ },
+ "ectopie": {
+  "fisier": "fig/wm/ectopie.jpg",
+  "titlu": "File:Ectopia Lentis in Marfan syndrome.jpg",
+  "autor": "Imrankabirhossain",
+  "licenta": "CC BY-SA 4.0",
+  "sursa": "https://commons.wikimedia.org/wiki/File:Ectopia_Lentis_in_Marfan_syndrome.jpg",
+  "w": 960,
+  "h": 1062
+ },
+ "marfan_police": {
+  "fisier": "fig/wm/marfan_police.png",
+  "titlu": "File:Marfan thumb sign.svg",
+  "autor": "Original PNG by Goopsmirk, SVG version by TheAwesomeHwyh.",
+  "licenta": "CC BY-SA 4.0",
+  "sursa": "https://commons.wikimedia.org/wiki/File:Marfan_thumb_sign.svg",
+  "w": 960,
+  "h": 1932
+ },
+ "rinichi_pk": {
+  "fisier": "fig/wm/rinichi_pk.jpg",
+  "titlu": "File:Adult Polycystic Kidney.jpg",
+  "autor": "Ed Uthman from Houston, TX, USA",
+  "licenta": "CC BY 2.0",
+  "sursa": "https://commons.wikimedia.org/wiki/File:Adult_Polycystic_Kidney.jpg",
+  "w": 960,
+  "h": 1440
+ },
+ "xantelasma": {
+  "fisier": "fig/wm/xantelasma.jpg",
+  "titlu": "File:Xanthelasma palpebrarum.jpg",
+  "autor": "Bobtheowl2 at English Wikipedia",
+  "licenta": "CC BY-SA 3.0",
+  "sursa": "https://commons.wikimedia.org/wiki/File:Xanthelasma_palpebrarum.jpg",
+  "w": 960,
+  "h": 639
+ },
+ "ldlr": {
+  "fisier": "fig/wm/ldlr.png",
+  "titlu": "File:Structure of LDL receptor family members.png",
+  "autor": "AntiSense",
+  "licenta": "CC BY-SA 3.0",
+  "sursa": "https://commons.wikimedia.org/wiki/File:Structure_of_LDL_receptor_family_members.png",
+  "w": 960,
+  "h": 920
+ },
+ "ar": {
+  "fisier": "fig/wm/ar.png",
+  "titlu": "File:Autosomal recessive - en.svg",
+  "autor": "Domaina, Kashmiri and SUM1",
+  "licenta": "CC BY-SA 3.0",
+  "sursa": "https://commons.wikimedia.org/wiki/File:Autosomal_recessive_-_en.svg",
+  "w": 960,
+  "h": 1669
+ },
+ "cftr": {
+  "fisier": "fig/wm/cftr.png",
+  "titlu": "File:CFTR protein structure scheme 02.svg",
+  "autor": "Kuebi = Armin Kübelbeck",
+  "licenta": "CC BY-SA 3.0",
+  "sursa": "https://commons.wikimedia.org/wiki/File:CFTR_protein_structure_scheme_02.svg",
+  "w": 960,
+  "h": 666
+ },
+ "hemocrom": {
+  "fisier": "fig/wm/hemocrom.jpg",
+  "titlu": "File:Hemochromatosis liver iron prussian blue.jpg",
+  "autor": "Joseph Mathew, May Y Leong, Nick Morley and Alastair D Burt",
+  "licenta": "CC BY 2.0",
+  "sursa": "https://commons.wikimedia.org/wiki/File:Hemochromatosis_liver_iron_prussian_blue.jpg",
+  "w": 960,
+  "h": 768
+ },
+ "pku": {
+  "fisier": "fig/wm/pku.png",
+  "titlu": "File:Inborn errors of metabolism of phenylalanine and tyrosine.svg",
+  "autor": "Bradford Morris",
+  "licenta": "CC BY-SA 4.0",
+  "sursa": "https://commons.wikimedia.org/wiki/File:Inborn_errors_of_metabolism_of_phenylalanine_and_tyrosine.svg",
+  "w": 960,
+  "h": 569
+ },
+ "kf": {
+  "fisier": "fig/wm/kf.jpg",
+  "titlu": "File:Kayser-Fleischer ring.jpg",
+  "autor": "Herbert L. Fred, MD, Hendrik A. van Dijk",
+  "licenta": "CC BY 3.0",
+  "sursa": "https://commons.wikimedia.org/wiki/File:Kayser-Fleischer_ring.jpg",
+  "w": 960,
+  "h": 637
+ },
+ "galt": {
+  "fisier": "fig/wm/galt.png",
+  "titlu": "File:Galactose Metabolism GALT.png",
+  "autor": "Canada Hky",
+  "licenta": "CC0",
+  "sursa": "https://commons.wikimedia.org/wiki/File:Galactose_Metabolism_GALT.png",
+  "w": 960,
+  "h": 148
+ },
+ "xld_tata": {
+  "fisier": "fig/wm/xld_tata.png",
+  "titlu": "File:X-linked dominant (affected father).svg",
+  "autor": "File:Autosomal dominant - en.svg: Domaina, Angelito7 and SUM1 Derivative work: SUM1",
+  "licenta": "CC BY-SA 4.0",
+  "sursa": "https://commons.wikimedia.org/wiki/File:X-linked_dominant_(affected_father).svg",
+  "w": 960,
+  "h": 1669
+ },
+ "xld_mama": {
+  "fisier": "fig/wm/xld_mama.png",
+  "titlu": "File:X-linked dominant (affected mother).svg",
+  "autor": "File:Autosomal dominant - en.svg: Domaina, Angelito7 and SUM1 Derivative work: SUM1",
+  "licenta": "CC BY-SA 4.0",
+  "sursa": "https://commons.wikimedia.org/wiki/File:X-linked_dominant_(affected_mother).svg",
+  "w": 960,
+  "h": 1669
+ },
+ "ip_piele": {
+  "fisier": "fig/wm/ip_piele.jpg",
+  "titlu": "File:Maculae Bloch-Sulzberger syndrome.jpg",
+  "autor": "see above",
+  "licenta": "CC BY 2.0",
+  "sursa": "https://commons.wikimedia.org/wiki/File:Maculae_Bloch-Sulzberger_syndrome.jpg",
+  "w": 960,
+  "h": 765
+ },
+ "rett": {
+  "fisier": "fig/wm/rett.jpg",
+  "titlu": "File:Rett girl with stereotyped hands movements.jpg",
+  "autor": "Ingridplg",
+  "licenta": "CC BY-SA 4.0",
+  "sursa": "https://commons.wikimedia.org/wiki/File:Rett_girl_with_stereotyped_hands_movements.jpg",
+  "w": 960,
+  "h": 913
+ },
+ "xlr": {
+  "fisier": "fig/wm/xlr.png",
+  "titlu": "File:X-linked recessive (carrier mother).svg",
+  "autor": "File:Autosomal recessive - en.svg: Domaina, Kashmiri and SUM1 Derivative work: SUM1",
+  "licenta": "CC BY-SA 4.0",
+  "sursa": "https://commons.wikimedia.org/wiki/File:X-linked_recessive_(carrier_mother).svg",
+  "w": 960,
+  "h": 1669
+ },
+ "xlr_tata": {
+  "fisier": "fig/wm/xlr_tata.png",
+  "titlu": "File:X-linked recessive (affected father).svg",
+  "autor": "File:Autosomal recessive - en.svg: Domaina, Kashmiri and SUM1 Derivative work: SUM1",
+  "licenta": "CC BY-SA 4.0",
+  "sursa": "https://commons.wikimedia.org/wiki/File:X-linked_recessive_(affected_father).svg",
+  "w": 960,
+  "h": 1669
+ },
+ "gowers": {
+  "fisier": "fig/wm/gowers.png",
+  "titlu": "File:Gowers's sign.png",
+  "autor": "William Richard Gowers (1845–1915)",
+  "licenta": "Public domain",
+  "sursa": "https://commons.wikimedia.org/wiki/File:Gowers%27s_sign.png",
+  "w": 960,
+  "h": 302
+ },
+ "coagulare": {
+  "fisier": "fig/wm/coagulare.png",
+  "titlu": "File:Coagulation full updated with FVII and TF to FIX arrow.svg",
+  "autor": "Joe D",
+  "licenta": "CC BY-SA 4.0",
+  "sursa": "https://commons.wikimedia.org/wiki/File:Coagulation_full_updated_with_FVII_and_TF_to_FIX_arrow.svg",
+  "w": 960,
+  "h": 768
+ },
+ "ishihara": {
+  "fisier": "fig/wm/ishihara.png",
+  "titlu": "File:Ishihara 9.svg",
+  "autor": "Shinobu Ishihara",
+  "licenta": "Public domain",
+  "sursa": "https://commons.wikimedia.org/wiki/File:Ishihara_9.svg",
+  "w": 960,
+  "h": 960
+ },
+ "tn": {
+  "fisier": "fig/wm/tn.jpg",
+  "titlu": "File:Nuchal translucency Dr. Wolfgang Moroder.jpg",
+  "autor": "This Photo was taken by Wolfgang Moroder. Feel free to use my photos, but please mention me as the author and send me a ",
+  "licenta": "CC BY-SA 3.0",
+  "sursa": "https://commons.wikimedia.org/wiki/File:Nuchal_translucency_Dr._Wolfgang_Moroder.jpg",
+  "w": 960,
+  "h": 723
+ },
+ "spina_desen": {
+  "fisier": "fig/wm/spina_desen.gif",
+  "titlu": "File:Spina bifida drawing.gif",
+  "autor": "National Center on Birth Defects and Developmental Disabilities",
+  "licenta": "Public domain",
+  "sursa": "https://commons.wikimedia.org/wiki/File:Spina_bifida_drawing.gif",
+  "w": 960,
+  "h": 1228
+ },
+ "amnio": {
+  "fisier": "fig/wm/amnio.png",
+  "titlu": "File:Amniocentesis.png",
+  "autor": "BruceBlaus",
+  "licenta": "CC BY-SA 4.0",
+  "sursa": "https://commons.wikimedia.org/wiki/File:Amniocentesis.png",
+  "w": 960,
+  "h": 960
+ },
+ "vilozitati": {
+  "fisier": "fig/wm/vilozitati.jpg",
+  "titlu": "File:Chorionic villi - high mag.jpg",
+  "autor": "Nephron",
+  "licenta": "CC BY-SA 3.0",
+  "sursa": "https://commons.wikimedia.org/wiki/File:Chorionic_villi_-_high_mag.jpg",
+  "w": 960,
+  "h": 640
+ },
+ "dpi": {
+  "fisier": "fig/wm/dpi.png",
+  "titlu": "File:Preimplantation genetic diagnosis.svg",
+  "autor": "Psiĥedelisto, Vincent Le Moign, and Nevit Dilmen (Nevit)",
+  "licenta": "CC BY-SA 4.0",
+  "sursa": "https://commons.wikimedia.org/wiki/File:Preimplantation_genetic_diagnosis.svg",
+  "w": 960,
+  "h": 960
+ },
+ "blastomer": {
+  "fisier": "fig/wm/blastomer.png",
+  "titlu": "File:Biopsy of blastomere.png",
+  "autor": "Pavel Trávník",
+  "licenta": "CC BY-SA 3.0",
+  "sursa": "https://commons.wikimedia.org/wiki/File:Biopsy_of_blastomere.png",
+  "w": 960,
+  "h": 411
+ },
+ "despicatura": {
+  "fisier": "fig/wm/despicatura.png",
+  "titlu": "File:Cleft Lip & Cleft Palate Repair.png",
+  "autor": "BruceBlaus",
+  "licenta": "CC BY-SA 4.0",
+  "sursa": "https://commons.wikimedia.org/wiki/File:Cleft_Lip_%26_Cleft_Palate_Repair.png",
+  "w": 960,
+  "h": 720
+ },
+ "aav": {
+  "fisier": "fig/wm/aav.jpg",
+  "titlu": "File:Adeno-associated virus serotype AAV2.jpg",
+  "autor": "Jazzlw",
+  "licenta": "CC BY-SA 4.0",
+  "sursa": "https://commons.wikimedia.org/wiki/File:Adeno-associated_virus_serotype_AAV2.jpg",
+  "w": 960,
+  "h": 895
+ },
+ "terapie_gen": {
+  "fisier": "fig/wm/terapie_gen.jpg",
+  "titlu": "File:Gene therapy.jpg",
+  "autor": "autor nespecificat",
+  "licenta": "Public domain",
+  "sursa": "https://commons.wikimedia.org/wiki/File:Gene_therapy.jpg",
+  "w": 960,
+  "h": 720
+ },
+ "crispr": {
+  "fisier": "fig/wm/crispr.png",
+  "titlu": "File:202410 CRISPR-Cas9.svg",
+  "autor": "DataBase Center for Life Science (DBCLS)",
+  "licenta": "CC BY 4.0",
+  "sursa": "https://commons.wikimedia.org/wiki/File:202410_CRISPR-Cas9.svg",
+  "w": 960,
+  "h": 960
  }
 };
